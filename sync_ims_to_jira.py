@@ -5,7 +5,7 @@ import pandas as pd
 import logging
 from pathlib import Path
 
-from my_jira_integration.client import get_jira_client
+from jira_integration_wrapper import get_jira_client
 
 logging.basicConfig(
     level=logging.INFO,

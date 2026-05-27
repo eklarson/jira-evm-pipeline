@@ -20,7 +20,7 @@ This keeps your Structure for Jira earned value calculations always up-to-date w
 
 ## Dependencies
 
-- jira-integration-wrapper (your reusable Jira client)
+- jira-integration-wrapper (the reusable Jira client from https://github.com/eklarson/jira-integration-wrapper)
 - pandas + openpyxl
 
 ## Next steps

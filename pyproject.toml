@@ -5,7 +5,7 @@ description = "Weekly IMS to Jira sync for Earned Value pipeline"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "my-jira-integration @ git+https://github.com/eklarson/jira-integration-wrapper.git",
+    "jira-integration-wrapper @ git+https://github.com/eklarson/jira-integration-wrapper.git",
     "pandas>=2.0",
     "openpyxl>=3.1",
 ]
