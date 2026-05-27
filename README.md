@@ -23,8 +23,22 @@ This keeps your Structure for Jira earned value calculations always up-to-date w
 - jira-integration-wrapper (the reusable Jira client from https://github.com/eklarson/jira-integration-wrapper)
 - pandas + openpyxl
 
+## XML Parsing Support
+
+Microsoft Project can also export the IMS as XML. This preserves custom field definitions and aliases much better than Excel exports.
+
+Use the new parser:
+
+```bash
+python parse_ims_xml.py /path/to/your/IMS.xml --summary-only
+python parse_ims_xml.py /path/to/your/IMS.xml --json | jq '.[0].CustomFields'
+```
+
+This script correctly maps custom fields (e.g. `188743731`) back to their defined names/aliases (e.g. "IMS ID", "Forecast Start").
+
 ## Next steps
 
 - Add NameRUN Excel sync
 - Generate EV summary reports
 - GitHub Action for weekly run
+- Use XML parser as primary data source instead of Excel
