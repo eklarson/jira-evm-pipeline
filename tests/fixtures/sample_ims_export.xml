@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project xmlns="http://schemas.microsoft.com/project">
+  <SaveVersion>16</SaveVersion>
+  <Name>Sample_IMS_2026-06.xml</Name>
+  <Title>Integrated Master Schedule - Sample for Jira EVM Pipeline Testing</Title>
+  <Company>Acme Aerospace</Company>
+  <CreationDate>2026-06-01T08:00:00</CreationDate>
+  <LastSaved>2026-06-01T10:45:00</LastSaved>
+  <ScheduleFromStart>1</ScheduleFromStart>
+  <StartDate>2026-06-01T08:00:00</StartDate>
+  <FinishDate>2027-03-31T17:00:00</FinishDate>
+  <CalendarUID>0</CalendarUID>
+
+  <!-- ==================== CUSTOM FIELD DEFINITIONS ==================== -->
+  <ExtendedAttributes>
+    <!-- Text1 = IMS ID (primary key for Jira matching) -->
+    <ExtendedAttribute>
+      <FieldID>188743731</FieldID>
+      <FieldName>Text1</FieldName>
+      <Alias>IMS ID</Alias>
+      <CFType>1</CFType>
+      <ElemType>0</ElemType>
+      <UserDef>1</UserDef>
+    </ExtendedAttribute>
+
+    <!-- Date1 = Forecast Start (what we push to Jira) -->
+    <ExtendedAttribute>
+      <FieldID>188743945</FieldID>
+      <FieldName>Date1</FieldName>
+      <Alias>Forecast Start</Alias>
+      <CFType>3</CFType>
+      <ElemType>0</ElemType>
+      <UserDef>1</UserDef>
+    </ExtendedAttribute>
+
+    <!-- Date2 = Forecast Finish (what we push to Jira) -->
+    <ExtendedAttribute>
+      <FieldID>188743946</FieldID>
+      <FieldName>Date2</FieldName>
+      <Alias>Forecast Finish</Alias>
+      <CFType>3</CFType>
+      <ElemType>0</ElemType>
+      <UserDef>1</UserDef>
+    </ExtendedAttribute>
+
+    <!-- Text2 = Control Account / CAM -->
+    <ExtendedAttribute>
+      <FieldID>188743732</FieldID>
+      <FieldName>Text2</FieldName>
+      <Alias>Control Account</Alias>
+      <CFType>1</CFType>
+      <ElemType>0</ElemType>
+      <UserDef>1</UserDef>
+    </ExtendedAttribute>
+
+    <!-- Text3 = Work Package -->
+    <ExtendedAttribute>
+      <FieldID>188743733</FieldID>
+      <FieldName>Text3</FieldName>
+      <Alias>Work Package</Alias>
+      <CFType>1</CFType>
+      <ElemType>0</ElemType>
+      <UserDef>1</UserDef>
+    </ExtendedAttribute>
+
+    <!-- Flag1 = Critical Path / IMS Critical -->
+    <ExtendedAttribute>
+      <FieldID>188743752</FieldID>
+      <FieldName>Flag1</FieldName>
+      <Alias>Critical IMS</Alias>
+      <CFType>0</CFType>
+      <ElemType>0</ElemType>
+      <UserDef>1</UserDef>
+    </ExtendedAttribute>
+
+    <!-- Text4 = Predecessor IMS IDs (custom field schedulers maintain for external sync) -->
+    <ExtendedAttribute>
+      <FieldID>188743734</FieldID>
+      <FieldName>Text4</FieldName>
+      <Alias>Predecessor IMS IDs</Alias>
+      <CFType>1</CFType>
+      <ElemType>0</ElemType>
+      <UserDef>1</UserDef>
+    </ExtendedAttribute>
+
+    <!-- Text5 = Successor IMS IDs (custom field schedulers maintain for external sync) -->
+    <ExtendedAttribute>
+      <FieldID>188743735</FieldID>
+      <FieldName>Text5</FieldName>
+      <Alias>Successor IMS IDs</Alias>
+      <CFType>1</CFType>
+      <ElemType>0</ElemType>
+      <UserDef>1</UserDef>
+    </ExtendedAttribute>
+  </ExtendedAttributes>
+
+  <!-- ==================== TASKS ==================== -->
+  <Tasks>
+    <!-- UID 0: Project Summary Task -->
+    <Task>
+      <UID>0</UID>
+      <ID>0</ID>
+      <Name>Sample IMS - AC-42 Satellite Program</Name>
+      <OutlineLevel>0</OutlineLevel>
+      <IsSummary>1</IsSummary>
+      <Start>2026-06-01T08:00:00</Start>
+      <Finish>2027-03-31T17:00:00</Finish>
+    </Task>
+
+    <!-- Level 1 Summary: Project Management -->
+    <Task>
+      <UID>1</UID>
+      <ID>1</ID>
+      <Name>1.0 Project Management</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <IsSummary>1</IsSummary>
+      <Start>2026-06-01T08:00:00</Start>
+      <Finish>2027-03-31T17:00:00</Finish>
+    </Task>
+
+    <!-- Detail tasks under 1.0 -->
+    <Task>
+      <UID>2</UID>
+      <ID>2</ID>
+      <Name>1.1 Program Planning &amp; Control</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Start>2026-06-01T08:00:00</Start>
+      <Finish>2026-06-30T17:00:00</Finish>
+      <BaselineStart>2026-06-01T08:00:00</BaselineStart>
+      <BaselineFinish>2026-06-30T17:00:00</BaselineFinish>
+      <Duration>PT160H0M0S</Duration>
+      <PercentComplete>75</PercentComplete>
+      <ExtendedAttribute>
+        <FieldID>188743731</FieldID>
+        <Value>IMS-1001</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743945</FieldID>
+        <Value>2026-06-02T08:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743946</FieldID>
+        <Value>2026-06-26T17:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743732</FieldID>
+        <Value>CA-001</Value>
+      </ExtendedAttribute>
+    </Task>
+
+    <Task>
+      <UID>3</UID>
+      <ID>3</ID>
+      <Name>1.2 Risk &amp; Opportunity Management</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Start>2026-06-08T08:00:00</Start>
+      <Finish>2026-07-15T17:00:00</Finish>
+      <Duration>PT200H0M0S</Duration>
+      <PercentComplete>40</PercentComplete>
+      <ExtendedAttribute>
+        <FieldID>188743731</FieldID>
+        <Value>IMS-1002</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743945</FieldID>
+        <Value>2026-06-09T08:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743946</FieldID>
+        <Value>2026-07-10T17:00:00</Value>
+      </ExtendedAttribute>
+    </Task>
+
+    <!-- Level 1 Summary: Systems Engineering -->
+    <Task>
+      <UID>4</UID>
+      <ID>4</ID>
+      <Name>2.0 Systems Engineering</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <IsSummary>1</IsSummary>
+      <Start>2026-06-15T08:00:00</Start>
+      <Finish>2026-11-30T17:00:00</Finish>
+    </Task>
+
+    <!-- Detail under 2.0 -->
+    <Task>
+      <UID>5</UID>
+      <ID>5</ID>
+      <Name>2.1 Requirements Definition</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Start>2026-06-15T08:00:00</Start>
+      <Finish>2026-07-31T17:00:00</Finish>
+      <BaselineStart>2026-06-15T08:00:00</BaselineStart>
+      <BaselineFinish>2026-07-31T17:00:00</BaselineFinish>
+      <Duration>PT240H0M0S</Duration>
+      <PercentComplete>100</PercentComplete>
+      <ExtendedAttribute>
+        <FieldID>188743731</FieldID>
+        <Value>IMS-2001</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743945</FieldID>
+        <Value>2026-06-16T08:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743946</FieldID>
+        <Value>2026-07-24T17:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743732</FieldID>
+        <Value>CA-010</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743733</FieldID>
+        <Value>WP-REQ-01</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743752</FieldID>
+        <Value>1</Value>
+      </ExtendedAttribute>
+      <!-- Predecessor / Successor IMS ID custom fields (common in IMS for external integration) -->
+      <ExtendedAttribute>
+        <FieldID>188743734</FieldID>
+        <Value>IMS-1001, IMS-1002</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743735</FieldID>
+        <Value>IMS-2002</Value>
+      </ExtendedAttribute>
+      <!-- Structured predecessor links (by UID) -->
+      <PredecessorLink>
+        <PredecessorUID>2</PredecessorUID>
+        <Type>1</Type>
+        <LinkLag>0</LinkLag>
+      </PredecessorLink>
+      <PredecessorLink>
+        <PredecessorUID>3</PredecessorUID>
+        <Type>1</Type>
+        <LinkLag>0</LinkLag>
+      </PredecessorLink>
+    </Task>
+
+    <Task>
+      <UID>6</UID>
+      <ID>6</ID>
+      <Name>2.2 Architecture Design</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Start>2026-07-20T08:00:00</Start>
+      <Finish>2026-09-18T17:00:00</Finish>
+      <BaselineStart>2026-07-20T08:00:00</BaselineStart>
+      <BaselineFinish>2026-09-18T17:00:00</BaselineFinish>
+      <Duration>PT320H0M0S</Duration>
+      <PercentComplete>65</PercentComplete>
+      <ExtendedAttribute>
+        <FieldID>188743731</FieldID>
+        <Value>IMS-2002</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743945</FieldID>
+        <Value>2026-07-21T08:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743946</FieldID>
+        <Value>2026-09-11T17:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743732</FieldID>
+        <Value>CA-010</Value>
+      </ExtendedAttribute>
+      <!-- This task is the successor of IMS-2001 via the custom field -->
+      <ExtendedAttribute>
+        <FieldID>188743734</FieldID>
+        <Value>IMS-2001</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743735</FieldID>
+        <Value>IMS-3001</Value>
+      </ExtendedAttribute>
+    </Task>
+
+    <!-- Task with NO custom fields (tests graceful handling) -->
+    <Task>
+      <UID>7</UID>
+      <ID>7</ID>
+      <Name>2.3 Interface Control Documents</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Start>2026-08-03T08:00:00</Start>
+      <Finish>2026-10-02T17:00:00</Finish>
+      <Duration>PT280H0M0S</Duration>
+      <PercentComplete>25</PercentComplete>
+    </Task>
+
+    <!-- Level 1 Summary: Integration &amp; Test -->
+    <Task>
+      <UID>8</UID>
+      <ID>8</ID>
+      <Name>3.0 Integration &amp; Test</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <IsSummary>1</IsSummary>
+      <Start>2026-10-01T08:00:00</Start>
+      <Finish>2027-02-28T17:00:00</Finish>
+    </Task>
+
+    <Task>
+      <UID>9</UID>
+      <ID>9</ID>
+      <Name>3.1 Subsystem Integration</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Start>2026-10-05T08:00:00</Start>
+      <Finish>2026-12-18T17:00:00</Finish>
+      <BaselineStart>2026-10-05T08:00:00</BaselineStart>
+      <BaselineFinish>2026-12-18T17:00:00</BaselineFinish>
+      <Duration>PT400H0M0S</Duration>
+      <PercentComplete>10</PercentComplete>
+      <ExtendedAttribute>
+        <FieldID>188743731</FieldID>
+        <Value>IMS-3001</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743945</FieldID>
+        <Value>2026-10-06T08:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743946</FieldID>
+        <Value>2026-12-11T17:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743732</FieldID>
+        <Value>CA-025</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743752</FieldID>
+        <Value>1</Value>
+      </ExtendedAttribute>
+    </Task>
+
+    <!-- Another task without IMS ID (should be skippable in sync) -->
+    <Task>
+      <UID>10</UID>
+      <ID>10</ID>
+      <Name>3.2 Environmental Testing</Name>
+      <OutlineLevel>2</OutlineLevel>
+      <Start>2027-01-04T08:00:00</Start>
+      <Finish>2027-02-12T17:00:00</Finish>
+      <Duration>PT240H0M0S</Duration>
+      <PercentComplete>0</PercentComplete>
+      <ExtendedAttribute>
+        <FieldID>188743945</FieldID>
+        <Value>2027-01-05T08:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743946</FieldID>
+        <Value>2027-02-05T17:00:00</Value>
+      </ExtendedAttribute>
+    </Task>
+
+    <!-- Final detail task with full custom fields -->
+    <Task>
+      <UID>11</UID>
+      <ID>11</ID>
+      <Name>4.0 Delivery &amp; Closeout</Name>
+      <OutlineLevel>1</OutlineLevel>
+      <Start>2027-03-01T08:00:00</Start>
+      <Finish>2027-03-31T17:00:00</Finish>
+      <Duration>PT160H0M0S</Duration>
+      <PercentComplete>0</PercentComplete>
+      <ExtendedAttribute>
+        <FieldID>188743731</FieldID>
+        <Value>IMS-4001</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743945</FieldID>
+        <Value>2027-03-02T08:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743946</FieldID>
+        <Value>2027-03-27T17:00:00</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743732</FieldID>
+        <Value>CA-099</Value>
+      </ExtendedAttribute>
+      <ExtendedAttribute>
+        <FieldID>188743733</FieldID>
+        <Value>WP-CLOSE-01</Value>
+      </ExtendedAttribute>
+    </Task>
+  </Tasks>
+
+  <Resources />
+  <Assignments />
+</Project>
